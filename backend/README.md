@@ -1,0 +1,1 @@
+This is a multilingual blog application built using React and Lingo.dev

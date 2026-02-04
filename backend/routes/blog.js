@@ -4,7 +4,7 @@ const supabase = require('../services/supabase');
 const { translateText } = require('../services/lingo');
 
 // GET /api/blogs - Get all blogs
-router.get('/', async (req, res) => {
+router.get('/all', async (req, res) => {
     const { data, error } = await supabase
         .from('blogs')
         .select('*')
@@ -18,7 +18,7 @@ router.get('/', async (req, res) => {
 });
 
 // POST /api/blogs - Create a blog
-router.post('/', async (req, res) => {
+router.post('/create', async (req, res) => {
     const { title, content, language } = req.body;
 
     // Basic validation
