@@ -36,7 +36,10 @@ router.post('/create', async (req, res) => {
         }])
         .select();
 
-    if (error) return res.status(500).json({ error: error.message });
+    if (error) {
+        console.error('Create blog error:', error);
+        return res.status(500).json({ error: error.message });
+    }
     res.json(data[0]);
 });
 
